@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>GoHair Admin — Báo cáo doanh thu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0E7C66}a:hover{color:#0B5E4E}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 1040px; background: #F4F5F7; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #14161A; display: flex; flex-wrap: wrap; box-sizing: border-box">
+
+  <nav aria-label="Menu quản trị" style="flex: 1 1 220px; max-width: 100%; background: #14161A; color: #FFFFFF; padding: 24px 16px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px">
+      <span style="width: 36px; height: 36px; border-radius: 10px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5L20 19M8.5 15.5L20 5"></path></svg></span>
+      <span style="font-size: 17px; font-weight: 700">GoHair Admin</span>
+    </div>
+    <a href="AdminDashboard.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Tổng quan</a>
+    <a href="AdminBookings.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Booking</a>
+    <a href="AdminBarbers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Thợ cắt tóc <span style="padding: 2px 8px; border-radius: 10px; background: #C62828; font-size: 11px; font-weight: 700; color: #FFFFFF">7</span></a>
+    <a href="AdminCustomers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khách hàng</a>
+    <a href="AdminFees.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Phí &amp; voucher</a>
+    <a href="AdminWithdrawals.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Rút tiền <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">12</span></a>
+    <a href="AdminComplaints.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khiếu nại <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">3</span></a>
+    <a href="AdminReports.dc.html" aria-current="page" style="height: 42px; padding: 0 12px; border-radius: 10px; background: #2A2E35; display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none">Báo cáo</a>
+    <a href="AdminLogin.dc.html" style="margin-top: auto; height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #9AA0A9; text-decoration: none">Đăng xuất</a>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 28px 32px 40px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <h1 style="margin: 0; font-size: 26px; font-weight: 700">Báo cáo doanh thu</h1>
+        <span style="font-size: 13px; color: #5B6270">Quý 3/2026 và tháng 10/2026 · đơn vị VND · dữ liệu mẫu</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <button type="button" style="height: 42px; padding: 0 14px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; color: #14161A">Kỳ: 07/2026 – 10/2026 ▾</button>
+        <button type="button" style="height: 42px; padding: 0 14px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; color: #14161A">Khu vực: Tất cả ▾</button>
+        <button type="button" style="height: 42px; padding: 0 16px; border-radius: 10px; border: 0; background: #0E7C66; font-family: inherit; font-size: 14px; font-weight: 600; color: #FFFFFF; cursor: pointer">Xuất Excel</button>
+      </div>
+    </div>
+
+    <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 16px; font-weight: 700">Doanh thu theo tháng</h2>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 900px; border-collapse: collapse; font-size: 14px">
+          <thead>
+            <tr style="color: #5B6270; font-size: 12px">
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: left">Tháng</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Đơn hoàn thành</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">GMV</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Phí nền tảng</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Voucher app chịu</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Phí cổng thanh toán</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Doanh thu thuần</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: left; font-weight: 600">07/2026</th>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">2.067</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">248.000.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">24.800.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">−6.200.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">−4.960.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 600">13.640.000</td>
+            </tr>
+            <tr>
+              <th scope="row" style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: left; font-weight: 600">08/2026</th>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">2.175</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">261.000.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">26.100.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">−5.800.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">−5.220.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 600">15.080.000</td>
+            </tr>
+            <tr>
+              <th scope="row" style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: left; font-weight: 600">09/2026</th>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">2.408</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">289.000.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">28.900.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">−7.400.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">−5.780.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 600">15.720.000</td>
+            </tr>
+            <tr style="background: #F4F5F7">
+              <th scope="row" style="padding: 12px; border-bottom: 1px solid #E4E6EA; text-align: left; font-weight: 700">Quý 3/2026</th>
+              <td style="padding: 12px; border-bottom: 1px solid #E4E6EA; text-align: right; font-weight: 700">6.650</td>
+              <td style="padding: 12px; border-bottom: 1px solid #E4E6EA; text-align: right; font-weight: 700">798.000.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #E4E6EA; text-align: right; font-weight: 700">79.800.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #E4E6EA; text-align: right; font-weight: 700">−19.400.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #E4E6EA; text-align: right; font-weight: 700">−15.960.000</td>
+              <td style="padding: 12px; border-bottom: 1px solid #E4E6EA; text-align: right; font-weight: 700; color: #0B5E4E">44.440.000</td>
+            </tr>
+            <tr>
+              <th scope="row" style="padding: 12px; text-align: left; font-weight: 600">10/2026</th>
+              <td style="padding: 12px; text-align: right">2.604</td>
+              <td style="padding: 12px; text-align: right">312.400.000</td>
+              <td style="padding: 12px; text-align: right">31.240.000</td>
+              <td style="padding: 12px; text-align: right">−12.400.000</td>
+              <td style="padding: 12px; text-align: right">−6.250.000</td>
+              <td style="padding: 12px; text-align: right; font-weight: 600">12.590.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin: 0; font-size: 12px; color: #5B6270">Doanh thu thuần = phí nền tảng − voucher app chịu − phí cổng thanh toán. Chưa trừ chi phí server, SMS, marketing. Tháng 10 giảm do chiến dịch GOHAIR30 (412 lượt).</p>
+    </section>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 16px">
+      <section style="flex: 3 1 420px; min-width: 0; background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 16px; font-weight: 700">Phí nền tảng theo khu vực · Quý 3 (triệu đồng)</h2>
+        <div role="img" aria-label="Quận 1 đóng góp nhiều nhất với 24,1 triệu, tiếp theo Quận 3 15,8 triệu" style="display: flex; flex-direction: column; gap: 10px; font-size: 13px">
+          <div style="display: flex; align-items: center; gap: 12px"><span style="width: 96px; flex: none">Quận 1</span><span style="flex: 1; height: 20px; background: #F4F5F7; border-radius: 4px"><span style="display: block; width: 100%; height: 20px; border-radius: 4px; background: #0E7C66"></span></span><span style="width: 40px; text-align: right; font-weight: 700">24,1</span></div>
+          <div style="display: flex; align-items: center; gap: 12px"><span style="width: 96px; flex: none">Quận 3</span><span style="flex: 1; height: 20px; background: #F4F5F7; border-radius: 4px"><span style="display: block; width: 66%; height: 20px; border-radius: 4px; background: #9CCFC2"></span></span><span style="width: 40px; text-align: right">15,8</span></div>
+          <div style="display: flex; align-items: center; gap: 12px"><span style="width: 96px; flex: none">Quận 7</span><span style="flex: 1; height: 20px; background: #F4F5F7; border-radius: 4px"><span style="display: block; width: 51%; height: 20px; border-radius: 4px; background: #9CCFC2"></span></span><span style="width: 40px; text-align: right">12,2</span></div>
+          <div style="display: flex; align-items: center; gap: 12px"><span style="width: 96px; flex: none">Bình Thạnh</span><span style="flex: 1; height: 20px; background: #F4F5F7; border-radius: 4px"><span style="display: block; width: 43%; height: 20px; border-radius: 4px; background: #9CCFC2"></span></span><span style="width: 40px; text-align: right">10,4</span></div>
+          <div style="display: flex; align-items: center; gap: 12px"><span style="width: 96px; flex: none">TP. Thủ Đức</span><span style="flex: 1; height: 20px; background: #F4F5F7; border-radius: 4px"><span style="display: block; width: 37%; height: 20px; border-radius: 4px; background: #9CCFC2"></span></span><span style="width: 40px; text-align: right">8,9</span></div>
+          <div style="display: flex; align-items: center; gap: 12px"><span style="width: 96px; flex: none">Khác</span><span style="flex: 1; height: 20px; background: #F4F5F7; border-radius: 4px"><span style="display: block; width: 35%; height: 20px; border-radius: 4px; background: #C7CBD1"></span></span><span style="width: 40px; text-align: right">8,4</span></div>
+        </div>
+      </section>
+
+      <section style="flex: 2 1 300px; min-width: 0; background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 16px; font-weight: 700">Loại đơn · Quý 3</h2>
+        <div role="img" aria-label="Hẹn giờ chiếm 78%, live chiếm 22% số đơn" style="display: flex; height: 28px; border-radius: 8px; overflow: hidden">
+          <span style="width: 78%; background: #0E7C66"></span>
+          <span style="width: 22%; background: #E8A317"></span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+          <div style="display: flex; align-items: center; justify-content: space-between"><span style="display: flex; align-items: center; gap: 8px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #0E7C66"></span>Hẹn giờ</span><span><strong style="font-weight: 600">5.187 đơn</strong> · 78%</span></div>
+          <div style="display: flex; align-items: center; justify-content: space-between"><span style="display: flex; align-items: center; gap: 8px"><span style="width: 12px; height: 12px; border-radius: 3px; background: #E8A317"></span>Cắt ngay (live)</span><span><strong style="font-weight: 600">1.463 đơn</strong> · 22%</span></div>
+        </div>
+        <div style="padding-top: 12px; border-top: 1px solid #EEF0F2; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+          <div style="display: flex; justify-content: space-between"><span style="color: #5B6270">Giá trị đơn trung bình</span><span style="font-weight: 600">120.000đ</span></div>
+          <div style="display: flex; justify-content: space-between"><span style="color: #5B6270">Tỷ lệ hủy</span><span style="font-weight: 600">4,3%</span></div>
+          <div style="display: flex; justify-content: space-between"><span style="color: #5B6270">Tổng tiền đã hoàn</span><span style="font-weight: 600">34.200.000đ</span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>GoHair Admin — Khiếu nại</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0E7C66}a:hover{color:#0B5E4E}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 1040px; background: #F4F5F7; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #14161A; display: flex; flex-wrap: wrap; box-sizing: border-box">
+
+  <nav aria-label="Menu quản trị" style="flex: 1 1 220px; max-width: 100%; background: #14161A; color: #FFFFFF; padding: 24px 16px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px">
+      <span style="width: 36px; height: 36px; border-radius: 10px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5L20 19M8.5 15.5L20 5"></path></svg></span>
+      <span style="font-size: 17px; font-weight: 700">GoHair Admin</span>
+    </div>
+    <a href="AdminDashboard.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Tổng quan</a>
+    <a href="AdminBookings.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Booking</a>
+    <a href="AdminBarbers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Thợ cắt tóc <span style="padding: 2px 8px; border-radius: 10px; background: #C62828; font-size: 11px; font-weight: 700; color: #FFFFFF">7</span></a>
+    <a href="AdminCustomers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khách hàng</a>
+    <a href="AdminFees.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Phí &amp; voucher</a>
+    <a href="AdminWithdrawals.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Rút tiền <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">12</span></a>
+    <a href="AdminComplaints.dc.html" aria-current="page" style="height: 42px; padding: 0 12px; border-radius: 10px; background: #2A2E35; display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none">Khiếu nại <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">3</span></a>
+    <a href="AdminReports.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Báo cáo</a>
+    <a href="AdminLogin.dc.html" style="margin-top: auto; height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #9AA0A9; text-decoration: none">Đăng xuất</a>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 28px 32px 40px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <h1 style="margin: 0; font-size: 26px; font-weight: 700">Khiếu nại</h1>
+      <span style="font-size: 13px; color: #5B6270">3 đang mở · mục tiêu xử lý trong 24 giờ · dữ liệu mẫu</span>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+      <section aria-label="Danh sách khiếu nại" style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border-radius: 16px; padding: 8px; display: flex; flex-direction: column; gap: 4px">
+        <button type="button" aria-pressed="true" style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 12px; border: 0; background: #E3F2EE; font-family: inherit; text-align: left; cursor: pointer">
+          <span style="display: flex; justify-content: space-between; width: 100%"><span style="font-size: 14px; font-weight: 700; color: #14161A">GH-102741</span><span style="font-size: 12px; color: #4A5160">2 giờ trước</span></span>
+          <span style="font-size: 13px; color: #3A404B">Thợ đến trễ, cắt sai kiểu</span>
+        </button>
+        <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 12px; border: 0; background: transparent; font-family: inherit; text-align: left; cursor: pointer">
+          <span style="display: flex; justify-content: space-between; width: 100%"><span style="font-size: 14px; font-weight: 700; color: #14161A">GH-102661</span><span style="font-size: 12px; font-weight: 600; color: #B71C1C">26 giờ trước</span></span>
+          <span style="font-size: 13px; color: #3A404B">Khách hủy sát giờ, thợ yêu cầu bù phí</span>
+        </button>
+        <button type="button" aria-pressed="false" style="display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: 12px; border: 0; background: transparent; font-family: inherit; text-align: left; cursor: pointer">
+          <span style="display: flex; justify-content: space-between; width: 100%"><span style="font-size: 14px; font-weight: 700; color: #14161A">GH-102702</span><span style="font-size: 12px; color: #4A5160">Hôm qua</span></span>
+          <span style="font-size: 13px; color: #3A404B">Thanh toán bị trừ 2 lần</span>
+        </button>
+      </section>
+
+      <div style="flex: 3 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+            <h2 style="margin: 0; font-size: 18px; font-weight: 700">Thợ đến trễ 40 phút và cắt không đúng kiểu yêu cầu</h2>
+            <span style="padding: 5px 12px; border-radius: 14px; background: #EDE7F6; font-size: 13px; font-weight: 600; color: #5B3FA0">Đang xử lý · tiền đang giữ</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; font-size: 14px">
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #5B6270">Đơn</span><a href="AdminBookingDetail.dc.html" style="font-weight: 600; text-decoration: none">GH-102741 · Live</a></div>
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #5B6270">Khách</span><span style="font-weight: 600">Văn Toàn</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #5B6270">Thợ</span><span style="font-weight: 600">Đăng Khoa</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #5B6270">Số tiền đang giữ</span><span style="font-weight: 600">130.000đ</span></div>
+          </div>
+        </section>
+
+        <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 700">Trao đổi</h2>
+          <div style="display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 12px; background: #F4F5F7">
+            <span style="font-size: 12px; font-weight: 600; color: #4A5160">Khách · Văn Toàn · 09:58</span>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55">Đặt cắt ngay lúc 8:15, app báo 15 phút nhưng 8:55 thợ mới đến. Tôi yêu cầu chừa dài phía trên nhưng bị cắt ngắn hết.</p>
+            <div style="display: flex; gap: 8px; margin-top: 4px">
+              <div style="width: 72px; height: 72px; border-radius: 8px; background: #DCEBE6; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #4A5160">Ảnh 1</div>
+              <div style="width: 72px; height: 72px; border-radius: 8px; background: #E6E1F2; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #4A5160">Ảnh 2</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 12px; border: 1px solid #E4E6EA">
+            <span style="font-size: 12px; font-weight: 600; color: #4A5160">Thợ · Đăng Khoa · 10:40</span>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55">Kẹt xe trên cầu, em đã nhắn khách báo trễ. Khách đồng ý kiểu tóc lúc cắt, em có ảnh trước và sau.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; padding: 14px; border-radius: 12px; background: #FFF4DB">
+            <span style="font-size: 12px; font-weight: 600; color: #8A4B00">Hệ thống</span>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55">Dữ liệu GPS: thợ nhận đơn 08:16, bắt đầu di chuyển 08:31, đến nơi 08:56. Thời gian dự kiến lúc nhận đơn: 15 phút.</p>
+          </div>
+          <label style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-size: 13px; color: #5B6270">Nhắn cho cả hai bên</span>
+            <textarea rows="2" placeholder="Nhập nội dung…" style="border: 1px solid #D5D8DD; border-radius: 10px; padding: 10px 12px; font-family: inherit; font-size: 14px; resize: none; color: #14161A"></textarea>
+          </label>
+        </section>
+
+        <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 700">Quyết định</h2>
+          <div role="radiogroup" aria-label="Phương án xử lý" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+            <button type="button" role="radio" aria-checked="false" style="padding: 14px; border-radius: 12px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; text-align: left; display: flex; flex-direction: column; gap: 4px; cursor: pointer"><span style="font-size: 14px; font-weight: 600; color: #14161A">Hoàn 100% cho khách</span><span style="font-size: 12px; color: #5B6270">Thợ không nhận tiền đơn này</span></button>
+            <button type="button" role="radio" aria-checked="true" style="padding: 13px; border-radius: 12px; border: 2px solid #0E7C66; background: #F1F8F6; font-family: inherit; text-align: left; display: flex; flex-direction: column; gap: 4px; cursor: pointer"><span style="font-size: 14px; font-weight: 600; color: #14161A">Hoàn một phần: 50.000đ</span><span style="font-size: 12px; color: #4A5160">Thợ nhận phần còn lại sau phí</span></button>
+            <button type="button" role="radio" aria-checked="false" style="padding: 14px; border-radius: 12px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; text-align: left; display: flex; flex-direction: column; gap: 4px; cursor: pointer"><span style="font-size: 14px; font-weight: 600; color: #14161A">Không chấp nhận</span><span style="font-size: 12px; color: #5B6270">Giải phóng tiền cho thợ</span></button>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+            <span style="display: flex; align-items: center; gap: 10px; font-size: 14px">
+              <span style="width: 22px; height: 22px; border-radius: 6px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span>
+              Ghi điểm phạt cho thợ (đến trễ quá 30 phút)
+            </span>
+            <button type="button" style="height: 44px; padding: 0 22px; border-radius: 10px; border: 0; background: #0E7C66; font-family: inherit; font-size: 14px; font-weight: 600; color: #FFFFFF; cursor: pointer">Xác nhận &amp; đóng khiếu nại</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

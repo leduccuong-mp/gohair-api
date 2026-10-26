@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>GoHair Admin — Đăng nhập</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0E7C66}a:hover{color:#0B5E4E}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 900px; background: #FFFFFF; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #14161A; display: flex; flex-wrap: wrap; box-sizing: border-box">
+
+  <section style="flex: 1 1 420px; background: #0B5E4E; color: #FFFFFF; padding: 48px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; box-sizing: border-box">
+    <div style="display: flex; align-items: center; gap: 12px">
+      <span style="width: 44px; height: 44px; border-radius: 12px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5L20 19M8.5 15.5L20 5"></path></svg></span>
+      <span style="font-size: 20px; font-weight: 700">GoHair Admin</span>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px; max-width: 460px">
+      <h1 style="margin: 0; font-size: 36px; line-height: 1.2; font-weight: 700">Quản lý thợ, booking và doanh thu ở một nơi</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #D6EDE7">Duyệt hồ sơ thợ, xử lý khiếu nại, cấu hình phí và theo dõi doanh thu theo tháng, theo quý.</p>
+    </div>
+    <span style="font-size: 13px; color: #B5DCD2">Chỉ dành cho nhân sự vận hành GoHair</span>
+  </section>
+
+  <section style="flex: 1 1 420px; padding: 48px; display: flex; align-items: center; justify-content: center; box-sizing: border-box">
+    <form style="width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 18px">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <h2 style="margin: 0; font-size: 26px; font-weight: 700">Đăng nhập</h2>
+        <p style="margin: 0; font-size: 14px; color: #5B6270">Dùng tài khoản quản trị được cấp</p>
+      </div>
+      <label style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 13px; font-weight: 600; color: #3A404B">Email</span>
+        <input type="email" placeholder="ten@gohair.vn" style="height: 48px; border: 1px solid #D5D8DD; border-radius: 10px; padding: 0 14px; font-family: inherit; font-size: 15px; color: #14161A">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px">
+        <span style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: #3A404B">Mật khẩu <a href="#" style="font-weight: 600; text-decoration: none">Quên mật khẩu?</a></span>
+        <input type="password" placeholder="••••••••" style="height: 48px; border: 1px solid #D5D8DD; border-radius: 10px; padding: 0 14px; font-family: inherit; font-size: 15px; color: #14161A">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 13px; font-weight: 600; color: #3A404B">Mã xác thực 2 lớp</span>
+        <input type="text" inputmode="numeric" placeholder="6 số từ ứng dụng xác thực" style="height: 48px; border: 1px solid #D5D8DD; border-radius: 10px; padding: 0 14px; font-family: inherit; font-size: 15px; letter-spacing: 1px; color: #14161A">
+      </label>
+      <a href="AdminDashboard.dc.html" style="height: 50px; border-radius: 10px; background: #0E7C66; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; text-decoration: none">Đăng nhập</a>
+      <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #5B6270">Mọi thao tác quản trị (duyệt thợ, hoàn tiền, đổi phí) đều được ghi nhật ký kèm tên người thực hiện.</p>
+    </form>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

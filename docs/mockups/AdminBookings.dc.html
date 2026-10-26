@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>GoHair Admin — Danh sách booking</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0E7C66}a:hover{color:#0B5E4E}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 1040px; background: #F4F5F7; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #14161A; display: flex; flex-wrap: wrap; box-sizing: border-box">
+
+  <nav aria-label="Menu quản trị" style="flex: 1 1 220px; max-width: 100%; background: #14161A; color: #FFFFFF; padding: 24px 16px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px">
+      <span style="width: 36px; height: 36px; border-radius: 10px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5L20 19M8.5 15.5L20 5"></path></svg></span>
+      <span style="font-size: 17px; font-weight: 700">GoHair Admin</span>
+    </div>
+    <a href="AdminDashboard.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Tổng quan</a>
+    <a href="AdminBookings.dc.html" aria-current="page" style="height: 42px; padding: 0 12px; border-radius: 10px; background: #2A2E35; display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none">Booking</a>
+    <a href="AdminBarbers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Thợ cắt tóc <span style="padding: 2px 8px; border-radius: 10px; background: #C62828; font-size: 11px; font-weight: 700; color: #FFFFFF">7</span></a>
+    <a href="AdminCustomers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khách hàng</a>
+    <a href="AdminFees.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Phí &amp; voucher</a>
+    <a href="AdminWithdrawals.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Rút tiền <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">12</span></a>
+    <a href="AdminComplaints.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khiếu nại <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">3</span></a>
+    <a href="AdminReports.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Báo cáo</a>
+    <a href="AdminLogin.dc.html" style="margin-top: auto; height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #9AA0A9; text-decoration: none">Đăng xuất</a>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 28px 32px 40px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <h1 style="margin: 0; font-size: 26px; font-weight: 700">Booking</h1>
+        <span style="font-size: 13px; color: #5B6270">Hôm nay 27/10/2026 · 142 đơn · dữ liệu mẫu</span>
+      </div>
+      <button type="button" style="height: 42px; padding: 0 16px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; color: #14161A; cursor: pointer">Xuất Excel</button>
+    </div>
+
+    <section style="background: #FFFFFF; border-radius: 16px; padding: 16px 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+      <label style="flex: 1 1 280px; height: 42px; border-radius: 10px; border: 1px solid #D5D8DD; display: flex; align-items: center; gap: 8px; padding: 0 12px; color: #5B6270">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input type="search" aria-label="Tìm booking" placeholder="Tìm theo mã đơn, tên khách, tên thợ, SĐT…" style="flex: 1; min-width: 0; border: 0; outline: 0; font-family: inherit; font-size: 14px; color: #14161A">
+      </label>
+      <button type="button" style="height: 42px; padding: 0 14px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; color: #14161A">Ngày: 27/10/2026 ▾</button>
+      <button type="button" style="height: 42px; padding: 0 14px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; color: #14161A">Loại: Tất cả ▾</button>
+      <button type="button" style="height: 42px; padding: 0 14px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; color: #14161A">Thanh toán: Tất cả ▾</button>
+      <button type="button" style="height: 42px; padding: 0 14px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; color: #14161A">Khu vực: Tất cả ▾</button>
+    </section>
+
+    <section style="background: #FFFFFF; border-radius: 16px; padding: 8px 20px 16px; display: flex; flex-direction: column; gap: 8px">
+      <div role="tablist" aria-label="Trạng thái" style="display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid #E4E6EA">
+        <button type="button" role="tab" aria-selected="true" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid #0E7C66; background: transparent; font-family: inherit; font-size: 14px; font-weight: 600; color: #0B5E4E">Tất cả <span style="color: #5B6270; font-weight: 500">142</span></button>
+        <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Chờ thợ nhận <span style="color: #5B6270">6</span></button>
+        <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Đang thực hiện <span style="color: #5B6270">11</span></button>
+        <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Hoàn thành <span style="color: #5B6270">117</span></button>
+        <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Đã hủy <span style="color: #5B6270">7</span></button>
+        <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Khiếu nại <span style="color: #5B6270">1</span></button>
+      </div>
+
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 980px; border-collapse: collapse; font-size: 14px">
+          <thead>
+            <tr style="text-align: left; color: #5B6270; font-size: 12px">
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Mã đơn</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Khách hàng</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Thợ</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Loại</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Hẹn lúc</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Khách trả</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Phí app</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Cổng</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><a href="AdminBookingDetail.dc.html" style="font-weight: 700">GH-102748</a></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Chị Lan</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Minh Tuấn</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Hẹn giờ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">27/10 14:00</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">180.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">21.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">VNPay</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #E3F2EE; font-size: 12px; font-weight: 600; color: #0B5E4E; white-space: nowrap">Thợ đã nhận</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><a href="AdminBookingDetail.dc.html" style="font-weight: 700">GH-102747</a></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Anh Bảo</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Minh Tuấn</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="color: #B71C1C; font-weight: 600">Live</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">27/10 13:05</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">120.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">12.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">MoMo</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #E1EAFB; font-size: 12px; font-weight: 600; color: #1F4FA8; white-space: nowrap">Đang đến</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><a href="AdminBookingDetail.dc.html" style="font-weight: 700">GH-102743</a></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Tuấn Kiệt</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Hoàng Phúc</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Hẹn giờ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">27/10 16:30</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">150.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">15.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">MoMo</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #FFF4DB; font-size: 12px; font-weight: 600; color: #8A4B00; white-space: nowrap">Chờ thợ nhận · 12 phút</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><a href="AdminBookingDetail.dc.html" style="font-weight: 700">GH-102746</a></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Thu Hà</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Hoàng Phúc</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Hẹn giờ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">27/10 11:00</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">160.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">16.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">VNPay</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #F4F5F7; font-size: 12px; font-weight: 600; color: #3A404B; white-space: nowrap">Hoàn thành</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><a href="AdminBookingDetail.dc.html" style="font-weight: 700">GH-102745</a></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Quốc Huy</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Đăng Khoa</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Hẹn giờ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">27/10 10:30</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">130.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">0đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">ZaloPay</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #FDECEC; font-size: 12px; font-weight: 600; color: #B71C1C; white-space: nowrap">Đã hủy · đã hoàn tiền</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><a href="AdminBookingDetail.dc.html" style="font-weight: 700">GH-102744</a></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Mai Phương</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Quang Vinh</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="color: #B71C1C; font-weight: 600">Live</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">27/10 09:40</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">90.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">9.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">VNPay</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #F4F5F7; font-size: 12px; font-weight: 600; color: #3A404B; white-space: nowrap">Hoàn thành</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><a href="AdminBookingDetail.dc.html" style="font-weight: 700">GH-102742</a></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Bích Ngọc</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Thanh Sơn</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Hẹn giờ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">27/10 09:00</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">100.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">5.000đ <span style="font-size: 11px; color: #5B6270">(5%)</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">VNPay</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #F4F5F7; font-size: 12px; font-weight: 600; color: #3A404B; white-space: nowrap">Hoàn thành</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px"><a href="AdminComplaints.dc.html" style="font-weight: 700">GH-102741</a></td>
+              <td style="padding: 12px">Văn Toàn</td>
+              <td style="padding: 12px">Đăng Khoa</td>
+              <td style="padding: 12px"><span style="color: #B71C1C; font-weight: 600">Live</span></td>
+              <td style="padding: 12px">27/10 08:15</td>
+              <td style="padding: 12px; text-align: right">130.000đ</td>
+              <td style="padding: 12px; text-align: right">13.000đ</td>
+              <td style="padding: 12px">VNPay</td>
+              <td style="padding: 12px"><span style="padding: 4px 10px; border-radius: 12px; background: #EDE7F6; font-size: 12px; font-weight: 600; color: #5B3FA0; white-space: nowrap">Khiếu nại · tạm giữ tiền</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; padding-top: 8px; font-size: 13px; color: #5B6270">
+        <span>Hiển thị 1–8 trong 142 đơn</span>
+        <div style="display: flex; gap: 6px">
+          <button type="button" aria-label="Trang trước" style="width: 36px; height: 36px; border-radius: 8px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; color: #14161A">‹</button>
+          <button type="button" aria-current="page" style="width: 36px; height: 36px; border-radius: 8px; border: 0; background: #14161A; font-family: inherit; font-weight: 600; color: #FFFFFF">1</button>
+          <button type="button" style="width: 36px; height: 36px; border-radius: 8px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; color: #14161A">2</button>
+          <button type="button" style="width: 36px; height: 36px; border-radius: 8px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; color: #14161A">3</button>
+          <button type="button" aria-label="Trang sau" style="width: 36px; height: 36px; border-radius: 8px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; color: #14161A">›</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

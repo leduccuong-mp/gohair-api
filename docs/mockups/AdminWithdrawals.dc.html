@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>GoHair Admin — Duyệt rút tiền</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0E7C66}a:hover{color:#0B5E4E}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 1040px; background: #F4F5F7; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #14161A; display: flex; flex-wrap: wrap; box-sizing: border-box">
+
+  <nav aria-label="Menu quản trị" style="flex: 1 1 220px; max-width: 100%; background: #14161A; color: #FFFFFF; padding: 24px 16px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px">
+      <span style="width: 36px; height: 36px; border-radius: 10px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5L20 19M8.5 15.5L20 5"></path></svg></span>
+      <span style="font-size: 17px; font-weight: 700">GoHair Admin</span>
+    </div>
+    <a href="AdminDashboard.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Tổng quan</a>
+    <a href="AdminBookings.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Booking</a>
+    <a href="AdminBarbers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Thợ cắt tóc <span style="padding: 2px 8px; border-radius: 10px; background: #C62828; font-size: 11px; font-weight: 700; color: #FFFFFF">7</span></a>
+    <a href="AdminCustomers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khách hàng</a>
+    <a href="AdminFees.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Phí &amp; voucher</a>
+    <a href="AdminWithdrawals.dc.html" aria-current="page" style="height: 42px; padding: 0 12px; border-radius: 10px; background: #2A2E35; display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none">Rút tiền <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">12</span></a>
+    <a href="AdminComplaints.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khiếu nại <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">3</span></a>
+    <a href="AdminReports.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Báo cáo</a>
+    <a href="AdminLogin.dc.html" style="margin-top: auto; height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #9AA0A9; text-decoration: none">Đăng xuất</a>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 28px 32px 40px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <h1 style="margin: 0; font-size: 26px; font-weight: 700">Rút tiền của thợ</h1>
+        <span style="font-size: 13px; color: #5B6270">12 yêu cầu chờ duyệt · tổng 48.600.000đ · dữ liệu mẫu</span>
+      </div>
+      <button type="button" style="height: 44px; padding: 0 18px; border-radius: 10px; border: 0; background: #0E7C66; font-family: inherit; font-size: 14px; font-weight: 600; color: #FFFFFF; cursor: pointer">Đánh dấu đã chuyển (3 yêu cầu · 9.150.000đ)</button>
+    </div>
+
+    <section style="display: flex; flex-wrap: wrap; gap: 0; background: #FFFFFF; border-radius: 16px; padding: 16px 20px; font-size: 14px; align-items: center">
+      <span style="flex: 1 1 200px; display: flex; align-items: center; gap: 10px; padding: 6px 0"><span style="width: 26px; height: 26px; border-radius: 13px; background: #E3F2EE; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #0B5E4E">1</span>Chọn yêu cầu hợp lệ</span>
+      <span style="flex: 1 1 260px; display: flex; align-items: center; gap: 10px; padding: 6px 0"><span style="width: 26px; height: 26px; border-radius: 13px; background: #E3F2EE; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #0B5E4E">2</span>Chuyển khoản qua internet banking</span>
+      <span style="flex: 1 1 260px; display: flex; align-items: center; gap: 10px; padding: 6px 0"><span style="width: 26px; height: 26px; border-radius: 13px; background: #E3F2EE; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #0B5E4E">3</span>Bấm "Đã chuyển" để ghi sổ cái ví</span>
+    </section>
+
+    <section style="background: #FFFFFF; border-radius: 16px; padding: 8px 20px 16px; display: flex; flex-direction: column; gap: 8px">
+      <div role="tablist" aria-label="Trạng thái rút tiền" style="display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid #E4E6EA">
+        <button type="button" role="tab" aria-selected="true" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid #0E7C66; background: transparent; font-family: inherit; font-size: 14px; font-weight: 600; color: #0B5E4E">Chờ duyệt <span style="color: #5B6270; font-weight: 500">12</span></button>
+        <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Đã chuyển</button>
+        <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Từ chối</button>
+      </div>
+
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 940px; border-collapse: collapse; font-size: 14px">
+          <thead>
+            <tr style="text-align: left; color: #5B6270; font-size: 12px">
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; width: 40px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Chọn</span></th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Thợ</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Số tiền rút</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Tài khoản nhận</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Gửi lúc</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Kiểm tra tự động</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Thao tác</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><button type="button" role="checkbox" aria-checked="true" aria-label="Chọn yêu cầu của Minh Tuấn" style="width: 22px; height: 22px; border-radius: 6px; border: 0; background: #0E7C66; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></button></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; font-weight: 600">Minh Tuấn</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 700">2.350.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Vietcombank ••• 4417 · NGUYEN MINH TUAN</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">27/10 08:02</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="font-size: 13px; font-weight: 600; color: #0B5E4E">✓ Đủ số dư, tên khớp eKYC</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; white-space: nowrap"><a href="#" style="font-weight: 600; text-decoration: none; color: #B71C1C">Từ chối</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><button type="button" role="checkbox" aria-checked="true" aria-label="Chọn yêu cầu của Hoàng Phúc" style="width: 22px; height: 22px; border-radius: 6px; border: 0; background: #0E7C66; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></button></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; font-weight: 600">Hoàng Phúc</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 700">5.000.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Techcombank ••• 9021 · TRAN HOANG PHUC</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">26/10 21:40</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="font-size: 13px; font-weight: 600; color: #0B5E4E">✓ Đủ số dư, tên khớp eKYC</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; white-space: nowrap"><a href="#" style="font-weight: 600; text-decoration: none; color: #B71C1C">Từ chối</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><button type="button" role="checkbox" aria-checked="true" aria-label="Chọn yêu cầu của Quang Vinh" style="width: 22px; height: 22px; border-radius: 6px; border: 0; background: #0E7C66; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></button></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; font-weight: 600">Quang Vinh</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 700">1.800.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">ACB ••• 7714 · LE QUANG VINH</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">26/10 19:15</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="font-size: 13px; font-weight: 600; color: #0B5E4E">✓ Đủ số dư, tên khớp eKYC</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; white-space: nowrap"><a href="#" style="font-weight: 600; text-decoration: none; color: #B71C1C">Từ chối</a></td>
+            </tr>
+            <tr style="background: #FFFBF2">
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><button type="button" role="checkbox" aria-checked="false" aria-label="Chọn yêu cầu của Đăng Khoa" style="width: 22px; height: 22px; border-radius: 6px; border: 2px solid #C7CBD1; background: #FFFFFF; padding: 0"></button></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; font-weight: 600">Đăng Khoa</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 700">4.200.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">MB Bank ••• 3305 · PHAM DANG KHOA</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">26/10 15:30</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><a href="AdminComplaints.dc.html" style="font-size: 13px; font-weight: 600; color: #8A4B00; text-decoration: none">⚠ Đang có khiếu nại GH-102741</a></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; white-space: nowrap"><a href="#" style="font-weight: 600; text-decoration: none; color: #B71C1C">Từ chối</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px"><button type="button" role="checkbox" aria-checked="false" aria-label="Chọn yêu cầu của Tiến Đạt" style="width: 22px; height: 22px; border-radius: 6px; border: 2px solid #C7CBD1; background: #FFFFFF; padding: 0"></button></td>
+              <td style="padding: 12px; font-weight: 600">Tiến Đạt</td>
+              <td style="padding: 12px; text-align: right; font-weight: 700">2.000.000đ</td>
+              <td style="padding: 12px">BIDV ••• 5560 · VO TIEN DAT</td>
+              <td style="padding: 12px">26/10 11:05</td>
+              <td style="padding: 12px"><span style="font-size: 13px; font-weight: 600; color: #8A4B00">⚠ Tên tài khoản khác tên eKYC</span></td>
+              <td style="padding: 12px; text-align: right; white-space: nowrap"><a href="#" style="font-weight: 600; text-decoration: none; color: #B71C1C">Từ chối</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <span style="padding-top: 8px; font-size: 13px; color: #5B6270">+ 7 yêu cầu khác · Yêu cầu có cảnh báo cần kiểm tra thủ công trước khi chuyển.</span>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

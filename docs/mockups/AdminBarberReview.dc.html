@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>GoHair Admin — Duyệt hồ sơ thợ</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0E7C66}a:hover{color:#0B5E4E}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 1040px; background: #F4F5F7; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #14161A; display: flex; flex-wrap: wrap; box-sizing: border-box">
+
+  <nav aria-label="Menu quản trị" style="flex: 1 1 220px; max-width: 100%; background: #14161A; color: #FFFFFF; padding: 24px 16px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px">
+      <span style="width: 36px; height: 36px; border-radius: 10px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5L20 19M8.5 15.5L20 5"></path></svg></span>
+      <span style="font-size: 17px; font-weight: 700">GoHair Admin</span>
+    </div>
+    <a href="AdminDashboard.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Tổng quan</a>
+    <a href="AdminBookings.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Booking</a>
+    <a href="AdminBarbers.dc.html" aria-current="page" style="height: 42px; padding: 0 12px; border-radius: 10px; background: #2A2E35; display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none">Thợ cắt tóc <span style="padding: 2px 8px; border-radius: 10px; background: #C62828; font-size: 11px; font-weight: 700; color: #FFFFFF">7</span></a>
+    <a href="AdminCustomers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khách hàng</a>
+    <a href="AdminFees.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Phí &amp; voucher</a>
+    <a href="AdminWithdrawals.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Rút tiền <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">12</span></a>
+    <a href="AdminComplaints.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khiếu nại <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">3</span></a>
+    <a href="AdminReports.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Báo cáo</a>
+    <a href="AdminLogin.dc.html" style="margin-top: auto; height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #9AA0A9; text-decoration: none">Đăng xuất</a>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 24px 32px 40px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+    <a href="AdminBarbers.dc.html" style="font-size: 13px; font-weight: 600; text-decoration: none">‹ Quay lại danh sách thợ</a>
+    <h1 style="margin: 0; font-size: 26px; font-weight: 700">Duyệt hồ sơ thợ <span style="font-size: 16px; font-weight: 500; color: #5B6270">· 7 hồ sơ chờ</span></h1>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+      <section aria-label="Hàng chờ duyệt" style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border-radius: 16px; padding: 8px; display: flex; flex-direction: column; gap: 4px">
+        <button type="button" aria-pressed="true" style="display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 12px; border: 0; background: #E3F2EE; font-family: inherit; text-align: left; cursor: pointer">
+          <span style="width: 36px; height: 36px; border-radius: 18px; background: #C9E4DC; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #0B5E4E; flex: none">NH</span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600; color: #14161A">Ngọc Hải</span><span style="font-size: 12px; color: #4A5160">Gửi 25/10 · chờ 2 ngày</span></span>
+        </button>
+        <button type="button" aria-pressed="false" style="display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 12px; border: 0; background: transparent; font-family: inherit; text-align: left; cursor: pointer">
+          <span style="width: 36px; height: 36px; border-radius: 18px; background: #E6E1F2; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #4F4470; flex: none">TL</span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600; color: #14161A">Thùy Linh</span><span style="font-size: 12px; color: #5B6270">Gửi 26/10 · thiếu ảnh CCCD mặt sau</span></span>
+        </button>
+        <button type="button" aria-pressed="false" style="display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 12px; border: 0; background: transparent; font-family: inherit; text-align: left; cursor: pointer">
+          <span style="width: 36px; height: 36px; border-radius: 18px; background: #F2E6DA; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #6B4E33; flex: none">BT</span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600; color: #14161A">Bảo Trung</span><span style="font-size: 12px; color: #5B6270">Gửi 26/10</span></span>
+        </button>
+        <button type="button" aria-pressed="false" style="display: flex; align-items: center; gap: 10px; padding: 12px; border-radius: 12px; border: 0; background: transparent; font-family: inherit; text-align: left; cursor: pointer">
+          <span style="width: 36px; height: 36px; border-radius: 18px; background: #E1EAFB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #1F4FA8; flex: none">MK</span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600; color: #14161A">Minh Khôi</span><span style="font-size: 12px; color: #5B6270">Gửi 27/10</span></span>
+        </button>
+        <span style="padding: 10px 12px; font-size: 13px; color: #5B6270">+ 3 hồ sơ khác</span>
+      </section>
+
+      <div style="flex: 3 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center">
+          <div style="width: 64px; height: 64px; border-radius: 32px; background: #C9E4DC; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #0B5E4E">NH</div>
+          <div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 4px">
+            <h2 style="margin: 0; font-size: 20px; font-weight: 700">Nguyễn Ngọc Hải</h2>
+            <span style="font-size: 14px; color: #4A5160">0944 ••• 815 · 4 năm kinh nghiệm · đăng ký phục vụ Q.5, Q.10</span>
+          </div>
+          <span style="padding: 6px 12px; border-radius: 14px; background: #FFF4DB; font-size: 13px; font-weight: 600; color: #8A4B00">Chờ duyệt</span>
+        </section>
+
+        <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+            <h2 style="margin: 0; font-size: 16px; font-weight: 700">Giấy tờ xác minh (eKYC)</h2>
+            <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0B5E4E"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>Khuôn mặt khớp ảnh CCCD (kết quả từ nhà cung cấp eKYC)</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+            <figure style="margin: 0; display: flex; flex-direction: column; gap: 6px">
+              <div style="aspect-ratio: 1.58; border-radius: 12px; background: #E8EDEF; border: 1px solid #D5D8DD; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #4A5160">Ảnh CCCD mặt trước</div>
+              <figcaption style="font-size: 12px; color: #5B6270">Số CCCD: 079 ••• ••• 412</figcaption>
+            </figure>
+            <figure style="margin: 0; display: flex; flex-direction: column; gap: 6px">
+              <div style="aspect-ratio: 1.58; border-radius: 12px; background: #E8EDEF; border: 1px solid #D5D8DD; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #4A5160">Ảnh CCCD mặt sau</div>
+              <figcaption style="font-size: 12px; color: #5B6270">Còn hạn đến 2034</figcaption>
+            </figure>
+            <figure style="margin: 0; display: flex; flex-direction: column; gap: 6px">
+              <div style="aspect-ratio: 1.58; border-radius: 12px; background: #E8EDEF; border: 1px solid #D5D8DD; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #4A5160">Ảnh chân dung chụp trực tiếp</div>
+              <figcaption style="font-size: 12px; color: #5B6270">Chụp trong app lúc 25/10 21:04</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-wrap: wrap; gap: 20px">
+          <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+            <h2 style="margin: 0; font-size: 16px; font-weight: 700">Hồ sơ nghề</h2>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #3A404B">Từng làm 4 năm tại tiệm ở Q.5. Chuyên cắt nam cổ điển, cạo râu bằng dao. Có dụng cụ riêng và xe máy.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px">
+              <span style="padding: 4px 10px; border-radius: 10px; background: #F4F5F7">Cắt nam · 100.000đ</span>
+              <span style="padding: 4px 10px; border-radius: 10px; background: #F4F5F7">Cạo râu · 50.000đ</span>
+              <span style="padding: 4px 10px; border-radius: 10px; background: #F4F5F7">Trẻ em · 80.000đ</span>
+            </div>
+          </div>
+          <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 10px">
+            <h2 style="margin: 0; font-size: 16px; font-weight: 700">Ảnh sản phẩm (6)</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px">
+              <div style="aspect-ratio: 1; border-radius: 8px; background: #DCEBE6"></div>
+              <div style="aspect-ratio: 1; border-radius: 8px; background: #E6E1F2"></div>
+              <div style="aspect-ratio: 1; border-radius: 8px; background: #F2E6DA"></div>
+            </div>
+          </div>
+        </section>
+
+        <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 700">Kết luận</h2>
+          <label style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-size: 13px; color: #5B6270">Lý do (bắt buộc khi từ chối hoặc yêu cầu bổ sung, sẽ gửi cho thợ)</span>
+            <textarea rows="2" placeholder="VD: ảnh CCCD bị mờ, vui lòng chụp lại nơi đủ sáng" style="border: 1px solid #D5D8DD; border-radius: 10px; padding: 10px 12px; font-family: inherit; font-size: 14px; resize: none; color: #14161A"></textarea>
+          </label>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end">
+            <button type="button" style="height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #F3C7C7; background: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; color: #B71C1C; cursor: pointer">Từ chối</button>
+            <button type="button" style="height: 44px; padding: 0 18px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; color: #14161A; cursor: pointer">Yêu cầu bổ sung</button>
+            <button type="button" style="height: 44px; padding: 0 22px; border-radius: 10px; border: 0; background: #0E7C66; font-family: inherit; font-size: 14px; font-weight: 600; color: #FFFFFF; cursor: pointer">Duyệt hồ sơ</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

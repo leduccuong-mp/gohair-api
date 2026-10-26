@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>GoHair Admin — Phí và voucher</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0E7C66}a:hover{color:#0B5E4E}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 1040px; background: #F4F5F7; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #14161A; display: flex; flex-wrap: wrap; box-sizing: border-box">
+
+  <nav aria-label="Menu quản trị" style="flex: 1 1 220px; max-width: 100%; background: #14161A; color: #FFFFFF; padding: 24px 16px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px">
+      <span style="width: 36px; height: 36px; border-radius: 10px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5L20 19M8.5 15.5L20 5"></path></svg></span>
+      <span style="font-size: 17px; font-weight: 700">GoHair Admin</span>
+    </div>
+    <a href="AdminDashboard.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #C9CDD3; text-decoration: none">Tổng quan</a>
+    <a href="AdminBookings.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #C9CDD3; text-decoration: none">Booking</a>
+    <a href="AdminBarbers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Thợ cắt tóc <span style="padding: 2px 8px; border-radius: 10px; background: #C62828; font-size: 11px; font-weight: 700; color: #FFFFFF">7</span></a>
+    <a href="AdminCustomers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #C9CDD3; text-decoration: none">Khách hàng</a>
+    <a href="AdminFees.dc.html" aria-current="page" style="height: 42px; padding: 0 12px; border-radius: 10px; background: #2A2E35; display: flex; align-items: center; font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none">Phí &amp; voucher</a>
+    <a href="AdminWithdrawals.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Rút tiền <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">12</span></a>
+    <a href="AdminComplaints.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khiếu nại <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">3</span></a>
+    <a href="AdminReports.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #C9CDD3; text-decoration: none">Báo cáo</a>
+    <a href="AdminLogin.dc.html" style="margin-top: auto; height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #9AA0A9; text-decoration: none">Đăng xuất</a>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 28px 32px 40px; display: flex; flex-direction: column; gap: 20px; box-sizing: border-box">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <h1 style="margin: 0; font-size: 26px; font-weight: 700">Phí &amp; voucher</h1>
+      <span style="font-size: 13px; color: #5B6270">Quy tắc cụ thể nhất được áp dụng. Tỷ lệ phí được lưu vào từng đơn tại thời điểm đặt, nên đổi phí không ảnh hưởng đơn cũ.</span>
+    </div>
+
+    <section style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px">
+        <h2 style="margin: 0; font-size: 16px; font-weight: 700">Quy tắc phí nền tảng</h2>
+        <button type="button" style="height: 40px; padding: 0 16px; border-radius: 10px; border: 0; background: #0E7C66; font-family: inherit; font-size: 14px; font-weight: 600; color: #FFFFFF; cursor: pointer">+ Thêm quy tắc</button>
+      </div>
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14px">
+          <thead>
+            <tr style="text-align: left; color: #5B6270; font-size: 12px">
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Ưu tiên</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Phạm vi</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Áp dụng cho</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Loại đơn</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Tỷ lệ</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Hiệu lực</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Thao tác</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">1</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #E6E1F2; font-size: 12px; font-weight: 600; color: #4F4470">Theo thợ</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Thanh Sơn (thợ mới)</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Tất cả</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 700">5%</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">01/10/2026 – 31/12/2026</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Sửa</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">2</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #F2E6DA; font-size: 12px; font-weight: 600; color: #6B4E33">Theo dịch vụ</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Cắt tóc trẻ em</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Hẹn giờ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 700">8%</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Từ 01/11/2026</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Sửa</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">3</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #E1EAFB; font-size: 12px; font-weight: 600; color: #1F4FA8">Theo khu vực</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Quận 7, TP. Thủ Đức</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Live</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 700">15%</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Từ 01/10/2026</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Sửa</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px">4</td>
+              <td style="padding: 12px"><span style="padding: 4px 10px; border-radius: 12px; background: #F4F5F7; font-size: 12px; font-weight: 600; color: #3A404B">Mặc định</span></td>
+              <td style="padding: 12px">Toàn hệ thống</td>
+              <td style="padding: 12px">Tất cả</td>
+              <td style="padding: 12px; text-align: right; font-weight: 700">10%</td>
+              <td style="padding: 12px">Từ 01/09/2026</td>
+              <td style="padding: 12px; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Sửa</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+      <section style="flex: 2 1 460px; min-width: 0; background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 16px; font-weight: 700">Voucher</h2>
+        <div style="overflow-x: auto">
+          <table style="width: 100%; min-width: 600px; border-collapse: collapse; font-size: 14px">
+            <thead>
+              <tr style="text-align: left; color: #5B6270; font-size: 12px">
+                <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Mã</th>
+                <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Giảm</th>
+                <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Điều kiện</th>
+                <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Đã dùng</th>
+                <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Hết hạn</th>
+                <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; font-weight: 700">GOHAIR30</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">30.000đ</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Đơn đầu tiên</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">412 / 1.000</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">30/11/2026</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #E3F2EE; font-size: 12px; font-weight: 600; color: #0B5E4E">Đang chạy</span></td>
+              </tr>
+              <tr>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; font-weight: 700">BEYEU20</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">20%, tối đa 40.000đ</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Có dịch vụ trẻ em</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">88 / 500</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">31/12/2026</td>
+                <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #E3F2EE; font-size: 12px; font-weight: 600; color: #0B5E4E">Đang chạy</span></td>
+              </tr>
+              <tr>
+                <td style="padding: 12px; font-weight: 700; color: #5B6270">LIVE15</td>
+                <td style="padding: 12px; color: #5B6270">15.000đ</td>
+                <td style="padding: 12px; color: #5B6270">Đơn live, từ 100.000đ</td>
+                <td style="padding: 12px; color: #5B6270">300 / 300</td>
+                <td style="padding: 12px; color: #5B6270">15/10/2026</td>
+                <td style="padding: 12px"><span style="padding: 4px 10px; border-radius: 12px; background: #F4F5F7; font-size: 12px; font-weight: 600; color: #4A5160">Đã kết thúc</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 16px; font-weight: 700">Tạo voucher mới</h2>
+        <label style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 13px; color: #5B6270">Mã voucher</span>
+          <input type="text" placeholder="VD: TET2027" style="height: 42px; border: 1px solid #D5D8DD; border-radius: 10px; padding: 0 12px; font-family: inherit; font-size: 14px; color: #14161A; min-width: 0">
+        </label>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 13px; color: #5B6270">Kiểu giảm</span>
+          <div role="radiogroup" aria-label="Kiểu giảm" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 3px; border-radius: 10px; background: #F4F5F7">
+            <button type="button" role="radio" aria-checked="true" style="height: 36px; border: 0; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 600; color: #14161A">Phần trăm</button>
+            <button type="button" role="radio" aria-checked="false" style="height: 36px; border: 0; border-radius: 8px; background: transparent; font-family: inherit; font-size: 13px; color: #4A5160">Số tiền</button>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+          <label style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #5B6270">Giá trị</span><input type="text" placeholder="20%" style="height: 42px; border: 1px solid #D5D8DD; border-radius: 10px; padding: 0 12px; font-family: inherit; font-size: 14px; min-width: 0"></label>
+          <label style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #5B6270">Giảm tối đa</span><input type="text" placeholder="40.000đ" style="height: 42px; border: 1px solid #D5D8DD; border-radius: 10px; padding: 0 12px; font-family: inherit; font-size: 14px; min-width: 0"></label>
+          <label style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #5B6270">Tổng số lượt</span><input type="text" placeholder="500" style="height: 42px; border: 1px solid #D5D8DD; border-radius: 10px; padding: 0 12px; font-family: inherit; font-size: 14px; min-width: 0"></label>
+          <label style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; color: #5B6270">Mỗi khách</span><input type="text" placeholder="1 lần" style="height: 42px; border: 1px solid #D5D8DD; border-radius: 10px; padding: 0 12px; font-family: inherit; font-size: 14px; min-width: 0"></label>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 13px; color: #5B6270">Bên chịu chi phí giảm giá</span>
+          <div role="radiogroup" aria-label="Bên chịu chi phí" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 3px; border-radius: 10px; background: #F4F5F7">
+            <button type="button" role="radio" aria-checked="true" style="height: 36px; border: 0; border-radius: 8px; background: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 600; color: #14161A">App</button>
+            <button type="button" role="radio" aria-checked="false" style="height: 36px; border: 0; border-radius: 8px; background: transparent; font-family: inherit; font-size: 13px; color: #4A5160">Thợ</button>
+            <button type="button" role="radio" aria-checked="false" style="height: 36px; border: 0; border-radius: 8px; background: transparent; font-family: inherit; font-size: 13px; color: #4A5160">Chia đôi</button>
+          </div>
+        </div>
+        <button type="button" style="height: 46px; border-radius: 10px; border: 0; background: #0E7C66; font-family: inherit; font-size: 15px; font-weight: 600; color: #FFFFFF; cursor: pointer">Tạo voucher</button>
+      </section>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

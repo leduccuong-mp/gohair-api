@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>GoHair Admin — Quản lý thợ</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#0E7C66}a:hover{color:#0B5E4E}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 1040px; background: #F4F5F7; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #14161A; display: flex; flex-wrap: wrap; box-sizing: border-box">
+
+  <nav aria-label="Menu quản trị" style="flex: 1 1 220px; max-width: 100%; background: #14161A; color: #FFFFFF; padding: 24px 16px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 8px 20px">
+      <span style="width: 36px; height: 36px; border-radius: 10px; background: #0E7C66; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="7" r="3"></circle><circle cx="6" cy="17" r="3"></circle><path d="M8.5 8.5L20 19M8.5 15.5L20 5"></path></svg></span>
+      <span style="font-size: 17px; font-weight: 700">GoHair Admin</span>
+    </div>
+    <a href="AdminDashboard.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Tổng quan</a>
+    <a href="AdminBookings.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Booking</a>
+    <a href="AdminBarbers.dc.html" aria-current="page" style="height: 42px; padding: 0 12px; border-radius: 10px; background: #2A2E35; display: flex; align-items: center; justify-content: space-between; font-size: 14px; font-weight: 600; color: #FFFFFF; text-decoration: none">Thợ cắt tóc <span style="padding: 2px 8px; border-radius: 10px; background: #C62828; font-size: 11px; font-weight: 700; color: #FFFFFF">7</span></a>
+    <a href="AdminCustomers.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khách hàng</a>
+    <a href="AdminFees.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Phí &amp; voucher</a>
+    <a href="AdminWithdrawals.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Rút tiền <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">12</span></a>
+    <a href="AdminComplaints.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Khiếu nại <span style="padding: 2px 8px; border-radius: 10px; background: #3A404B; font-size: 11px; font-weight: 700; color: #FFFFFF">3</span></a>
+    <a href="AdminReports.dc.html" style="height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #C9CDD3; text-decoration: none">Báo cáo</a>
+    <a href="AdminLogin.dc.html" style="margin-top: auto; height: 42px; padding: 0 12px; border-radius: 10px; display: flex; align-items: center; font-size: 14px; color: #9AA0A9; text-decoration: none">Đăng xuất</a>
+  </nav>
+
+  <main style="flex: 999 1 560px; min-width: 0; padding: 28px 32px 40px; display: flex; flex-direction: column; gap: 18px; box-sizing: border-box">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <h1 style="margin: 0; font-size: 26px; font-weight: 700">Thợ cắt tóc</h1>
+        <span style="font-size: 13px; color: #5B6270">197 thợ · 23 đang live lúc này · dữ liệu mẫu</span>
+      </div>
+      <button type="button" style="height: 42px; padding: 0 16px; border-radius: 10px; border: 1px solid #D5D8DD; background: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 600; color: #14161A; cursor: pointer">Xuất Excel</button>
+    </div>
+
+    <a href="AdminBarberReview.dc.html" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; border-radius: 16px; background: #FDECEC; text-decoration: none; color: #14161A">
+      <span style="display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px; font-weight: 700">7 hồ sơ thợ đang chờ duyệt</strong><span style="font-size: 13px; color: #4A5160">Hồ sơ cũ nhất đã chờ 2 ngày. Thợ chỉ nhận được đơn sau khi được duyệt eKYC.</span></span>
+      <span style="height: 40px; padding: 0 16px; border-radius: 10px; background: #B71C1C; display: flex; align-items: center; font-size: 14px; font-weight: 600; color: #FFFFFF">Duyệt hồ sơ</span>
+    </a>
+
+    <section style="background: #FFFFFF; border-radius: 16px; padding: 8px 20px 16px; display: flex; flex-direction: column; gap: 12px">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid #E4E6EA">
+        <div role="tablist" aria-label="Trạng thái thợ" style="display: flex; flex-wrap: wrap; gap: 4px">
+          <button type="button" role="tab" aria-selected="true" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid #0E7C66; background: transparent; font-family: inherit; font-size: 14px; font-weight: 600; color: #0B5E4E">Đang hoạt động <span style="color: #5B6270; font-weight: 500">186</span></button>
+          <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Chờ duyệt <span style="color: #5B6270">7</span></button>
+          <button type="button" role="tab" aria-selected="false" style="height: 46px; padding: 0 14px; border: 0; border-bottom: 2px solid transparent; background: transparent; font-family: inherit; font-size: 14px; color: #3A404B">Tạm khóa <span style="color: #5B6270">4</span></button>
+        </div>
+        <label style="flex: 0 1 300px; height: 38px; margin-bottom: 6px; border-radius: 10px; border: 1px solid #D5D8DD; display: flex; align-items: center; gap: 8px; padding: 0 12px; color: #5B6270">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+          <input type="search" aria-label="Tìm thợ" placeholder="Tên, SĐT, khu vực…" style="flex: 1; min-width: 0; border: 0; outline: 0; font-family: inherit; font-size: 14px">
+        </label>
+      </div>
+
+      <div style="overflow-x: auto">
+        <table style="width: 100%; min-width: 980px; border-collapse: collapse; font-size: 14px">
+          <thead>
+            <tr style="text-align: left; color: #5B6270; font-size: 12px">
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Thợ</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Khu vực</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Đánh giá</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Đơn tháng 10</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Doanh thu tháng</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA; text-align: right">Tỷ lệ hủy</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA">Ghi chú</th>
+              <th scope="col" style="padding: 10px 12px; font-weight: 600; border-bottom: 1px solid #E4E6EA"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Thao tác</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="display: flex; align-items: center; gap: 10px"><span style="width: 34px; height: 34px; border-radius: 17px; background: #0E7C66; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #FFFFFF">MT</span><span style="display: flex; flex-direction: column"><strong style="font-weight: 600">Minh Tuấn</strong><span style="font-size: 12px; color: #5B6270">0903 ••• 211</span></span></span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Q.1, Q.3</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">4.9 ★ <span style="color: #5B6270">(212)</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">86</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">11.240.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">1,2%</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #FDECEC; font-size: 12px; font-weight: 600; color: #B71C1C">Đang live</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Xem</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="display: flex; align-items: center; gap: 10px"><span style="width: 34px; height: 34px; border-radius: 17px; background: #E6E1F2; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #4F4470">HP</span><span style="display: flex; flex-direction: column"><strong style="font-weight: 600">Hoàng Phúc</strong><span style="font-size: 12px; color: #5B6270">0938 ••• 540</span></span></span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Q.3, Q.10</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">4.8 ★ <span style="color: #5B6270">(96)</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">61</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">9.150.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">2,0%</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="font-size: 13px; color: #5B6270">—</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Xem</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="display: flex; align-items: center; gap: 10px"><span style="width: 34px; height: 34px; border-radius: 17px; background: #F2E6DA; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #6B4E33">ĐK</span><span style="display: flex; flex-direction: column"><strong style="font-weight: 600">Đăng Khoa</strong><span style="font-size: 12px; color: #5B6270">0977 ••• 093</span></span></span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Q.1, Bình Thạnh</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">4.6 ★ <span style="color: #5B6270">(154)</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">72</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">9.360.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right; font-weight: 700; color: #8A4B00">6,9%</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #FFF4DB; font-size: 12px; font-weight: 600; color: #8A4B00">Tỷ lệ hủy cao · 1 khiếu nại</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Xem</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="display: flex; align-items: center; gap: 10px"><span style="width: 34px; height: 34px; border-radius: 17px; background: #DCEBE6; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #0B5E4E">QV</span><span style="display: flex; flex-direction: column"><strong style="font-weight: 600">Quang Vinh</strong><span style="font-size: 12px; color: #5B6270">0909 ••• 778</span></span></span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">Q.7</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">4.7 ★ <span style="color: #5B6270">(48)</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">39</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">3.510.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">2,6%</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #FDECEC; font-size: 12px; font-weight: 600; color: #B71C1C">Đang live</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Xem</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="display: flex; align-items: center; gap: 10px"><span style="width: 34px; height: 34px; border-radius: 17px; background: #E1EAFB; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #1F4FA8">TS</span><span style="display: flex; flex-direction: column"><strong style="font-weight: 600">Thanh Sơn</strong><span style="font-size: 12px; color: #5B6270">0868 ••• 102</span></span></span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">TP. Thủ Đức</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2">4.9 ★ <span style="color: #5B6270">(12)</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">14</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">1.400.000đ</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right">0%</td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2"><span style="padding: 4px 10px; border-radius: 12px; background: #E1EAFB; font-size: 12px; font-weight: 600; color: #1F4FA8">Thợ mới · phí 5%</span></td>
+              <td style="padding: 12px; border-bottom: 1px solid #EEF0F2; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Xem</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 12px"><span style="display: flex; align-items: center; gap: 10px"><span style="width: 34px; height: 34px; border-radius: 17px; background: #E4E6EA; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #4A5160">TĐ</span><span style="display: flex; flex-direction: column"><strong style="font-weight: 600">Tiến Đạt</strong><span style="font-size: 12px; color: #5B6270">0915 ••• 336</span></span></span></td>
+              <td style="padding: 12px">Gò Vấp</td>
+              <td style="padding: 12px">4.5 ★ <span style="color: #5B6270">(27)</span></td>
+              <td style="padding: 12px; text-align: right">22</td>
+              <td style="padding: 12px; text-align: right">2.640.000đ</td>
+              <td style="padding: 12px; text-align: right">3,1%</td>
+              <td style="padding: 12px"><span style="font-size: 13px; color: #5B6270">—</span></td>
+              <td style="padding: 12px; text-align: right"><a href="#" style="font-weight: 600; text-decoration: none">Xem</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
