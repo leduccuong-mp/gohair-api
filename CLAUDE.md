@@ -13,7 +13,7 @@ Ngôn ngữ trao đổi: tiếng Việt. Code, tên biến, commit message: ti�
 
 ## Stack
 
-- Laravel bản mới nhất, PHP 8.3+, PostgreSQL + PostGIS, Redis.
+- Laravel bản mới nhất, PHP 8.5+, PostgreSQL + PostGIS, Redis.
 - Auth API: Sanctum (token cho mobile). Admin: Filament, guard `admin` riêng, bật 2FA.
 - Realtime: Laravel Reverb. Queue: Redis + Horizon. Lịch chạy: Scheduler.
 - OpenAPI: Scramble, phục vụ tại `/docs/api.json` (mobile sinh client từ đây).
