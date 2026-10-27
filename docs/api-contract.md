@@ -10,6 +10,7 @@ Thỏa thuận giữa `gohair-api` và `gohair-mobile`. Chi tiết từng endpoi
 - Phân trang: `?page=&per_page=` → `{ data: [], meta: { current_page, last_page, total } }`.
 - Lỗi: HTTP status + `{ "message": "...", "errors": { "field": ["..."] } }`. 401 = token hết hạn, 403 = không đủ quyền, 422 = validate, 409 = xung đột (slot đã bị đặt).
 - Breaking change: thêm `/api/v2` hoặc giữ tương thích ngược; không đổi nghĩa field cũ.
+- CORS: mở cho mọi origin trên `api/*`, `docs/api`, `docs/api.json` (app mobile dùng Bearer token, không dùng cookie nên không cần `supports_credentials`).
 
 ## Realtime (Reverb, giao thức Pusher)
 
@@ -21,6 +22,7 @@ Thỏa thuận giữa `gohair-api` và `gohair-mobile`. Chi tiết từng endpoi
 
 | Nhóm | Method & path | Ai dùng |
 | --- | --- | --- |
+| Hạ tầng | `GET /health` — kiểm tra kết nối DB + Redis, trả `200` (`status: ok`) hoặc `503` (`status: down`) | Hạ tầng / uptime monitor |
 | Auth | `POST /auth/otp/request`, `POST /auth/otp/verify`, `POST /auth/social`, `POST /auth/logout`, `GET /me`, `PATCH /me` | Cả hai |
 | Địa chỉ | `GET/POST/PATCH/DELETE /addresses` | Khách |
 | Tìm thợ | `GET /barbers?lat=&lng=&radius_km=&q=&min_rating=&price_min=&price_max=&service=&live_only=&sort=` | Khách |

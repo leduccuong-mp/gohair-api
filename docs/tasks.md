@@ -4,11 +4,11 @@ Làm theo thứ tự. Tick `[x]` khi test xanh và đã commit. Cột "Mở khó
 
 ## M0 — Khởi tạo
 
-- [ ] Tạo Laravel (PostgreSQL, Redis), cài Sanctum, Pest, Scramble, Reverb, Horizon, Filament; `.env.example`; migration bật PostGIS
-- [ ] Docker Compose cho PostgreSQL+PostGIS và Redis để chạy local
-- [ ] Cấu trúc `app/Modules/*` + module mẫu `Health` (`GET /api/v1/health`) có test
-- [ ] Chuẩn hóa lỗi JSON, phân trang, CORS; Scramble phục vụ `/docs/api.json` → *mở khóa: mobile sinh API client*
-- [ ] GitHub Actions: chạy Pest với PostgreSQL+Redis service
+- [x] Tạo Laravel (PostgreSQL, Redis), cài Sanctum, Pest, Scramble, Reverb, Horizon, Filament; `.env.example`; migration bật PostGIS
+- [x] Docker Compose cho PostgreSQL+PostGIS và Redis để chạy local
+- [x] Cấu trúc `app/Modules/*` + module mẫu `Health` (`GET /api/v1/health`) có test
+- [x] Chuẩn hóa lỗi JSON, phân trang, CORS; Scramble phục vụ `/docs/api.json` → *mở khóa: mobile sinh API client*
+- [x] GitHub Actions: chạy Pest với PostgreSQL+Redis service
 
 ## M1 — Tài khoản & hồ sơ
 
