@@ -16,10 +16,6 @@
 /bootstrap/cache/*.php
 /database/*.sqlite
 /node_modules
-/storage/framework/cache/data
-/storage/framework/sessions/*
-/storage/framework/testing/*
-/storage/framework/views/*.php
 /public/build
 /public/css/filament
 /public/fonts-manifest.dev.json
